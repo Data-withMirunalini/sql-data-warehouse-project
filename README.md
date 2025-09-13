@@ -1,53 +1,90 @@
-# 📊 Data Warehouse and Analytics Project
+📊 Data Warehouse & Analytics Project
 
-![Project Banner](https://img.shields.io/badge/SQL%20Server-Data%20Warehouse-blue?style=for-the-badge)
-![Data Engineering](https://img.shields.io/badge/Data%20Engineering-✔️-green?style=for-the-badge)
-![Data Analytics](https://img.shields.io/badge/Data%20Analytics-✔️-yellow?style=for-the-badge)
-![License: MIT](https://img.shields.io/badge/License-MIT-orange?style=for-the-badge)
+Welcome to the Data Warehouse and Analytics Project! 🚀
+This repository demonstrates how to design and implement a modern data warehouse using MySQL, following the Medallion Architecture (Bronze → Silver → Gold).
 
----
+Built as a portfolio project, it highlights industry best practices in data engineering, data modeling, and analytics, showcasing how raw data can be transformed into actionable insights that drive business decisions.
 
-Welcome to the **Data Warehouse and Analytics Project** repository! 🚀  
-This project demonstrates a comprehensive data warehousing and analytics solution, from building a data warehouse to generating actionable insights. Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
+📋 Project Requirements
+1️⃣ Building the Data Warehouse (Data Engineering)
 
----
+Objective
+Develop a MySQL-based data warehouse to consolidate sales data, enabling analytical reporting and informed decision-making.
 
-## 📋 Project Requirements
+Specifications
 
-### 1️⃣ Building the Data Warehouse (Data Engineering)
+📂 Data Sources: Import ERP & CRM datasets (CSV files).
 
-#### Objective
-Develop a modern data warehouse using SQL Server to consolidate sales data, enabling analytical reporting and informed decision-making.
+🧹 Data Quality: Cleanse, standardize, and validate data before loading.
 
-#### Specifications
-- **Data Sources**: Import data from two source systems (ERP and CRM) provided as CSV files.
-- **Data Quality**: Cleanse and resolve data quality issues prior to analysis.
-- **Integration**: Combine both sources into a single, user-friendly data model designed for analytical queries.
-- **Scope**: Focus on the latest dataset only; historization of data is not required.
-- **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
+🔗 Integration: Merge ERP + CRM into a single dimensional model (star schema).
 
----
+⏳ Scope: Focus on latest dataset (no historization).
 
-### 2️⃣ BI: Analytics & Reporting (Data Analytics)
+📑 Documentation: Provide clear data model + ETL documentation.
 
-#### Objective
-Develop SQL-based analytics to deliver detailed insights into:
-- **Customer Behavior**
-- **Product Performance**
-- **Sales Trends**
+2️⃣ BI: Analytics & Reporting (Data Analytics)
 
-These insights empower stakeholders with key business metrics, enabling strategic decision-making.
+Objective
+Use MySQL queries to deliver deep insights into:
 
----
+🧑‍🤝‍🧑 Customer Behavior
 
-## 🛡 License
-This project is licensed under the [MIT License](LICENSE).  
+📦 Product Performance
+
+📈 Sales Trends
+
+Outcome
+Stakeholders get key business metrics that enable strategic decision-making and improve data-driven culture.
+
+🏗️ Architecture
+
+This project follows the Medallion Architecture implemented in MySQL.
+
+🥉 Bronze Layer – Raw Data
+
+MySQL staging tables (loaded via CSV/ETL).
+
+Raw ERP & CRM extracts stored as-is for traceability.
+
+🥈 Silver Layer – Cleansed Data
+
+MySQL cleansed schema with standardized keys & formats.
+
+Deduplication, data cleaning, enrichment, derived columns.
+
+🥇 Gold Layer – Business Data
+
+Star schema with fact & dimension tables.
+
+Business logic + aggregations for BI dashboards.
+
+Exposed as MySQL views for easy analytics.
+
+📌 Visuals 
+
+![High-Level Architecture]([docs/high_level_architecture.png](https://github.com/Data-withMirunalini/sql-data-warehouse-project/blob/main/docs/data_architecture_dwh.png))  
+![Data Flow](d[ocs/data_flow.png](https://github.com/Data-withMirunalini/sql-data-warehouse-project/blob/main/docs/data_flow_dwh.png))  
+![Sales Data Mart]([docs/sales_data_mart.png](https://github.com/Data-withMirunalini/sql-data-warehouse-project/blob/main/docs/data_model_dwh.png))  
+
+🛠 Tech Stack
+
+🗄️ Database: MySQL
+
+📊 Modeling: Star Schema (Fact + Dimension)
+
+⚙️ ETL: MySQL SQL scripts (+ Python optional for ingestion)
+
+📈 Analytics & Reporting: SQL queries, BI dashboards (Power BI / Tableau)
+
+🛡 License
+
+This project is licensed under the MIT License.
 You are free to use, modify, and share this project with proper attribution.
 
----
+🌟 About Me
 
-## 🌟 About Me
-Hi there! I'm **Mirunalini A. R. A.**, also known as **Data-withMirunalini**.  
-I’m a BE CSE student and IIT Madras BS in Data Science learner, passionate about data, analytics, and building impactful projects!
+Hi there! 👋 I’m Mirunalini A. R. A., also known as Data-withMirunalini.
+I’m a B.E. CSE student and an IIT Madras BS in Data Science learner, passionate about data science,engineering, analytics, and building impactful projects.
 
-📫 **GitHub:** [Data-withMirunalini](https://github.com/Data-withMirunalini)
+📫 GitHub: Data-withMirunalinis://github.com/Data-withMirunalini)
