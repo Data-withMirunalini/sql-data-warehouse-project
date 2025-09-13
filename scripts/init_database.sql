@@ -1,50 +1,24 @@
 /*
 =============================================================
-Create Database and Schemas
+Create Databases: bronze, silver, gold
 =============================================================
 Script Purpose:
-    This script creates a new database named 'DataWarehouse' after checking if it already exists. 
-    If the database exists, it is dropped and recreated. Additionally, the script sets up three schemas 
-    within the database: 'bronze', 'silver', and 'gold'.
-	
+    This script creates three separate databases named 'bronze', 'silver', and 'gold'.
+    If any of these databases exist, they are dropped and recreated.
+
 WARNING:
-    Running this script will drop the entire 'DataWarehouse' database if it exists. 
-    All data in the database will be permanently deleted. Proceed with caution 
+    Running this script will drop the existing databases if they exist.
+    All data in the databases will be permanently deleted. Proceed with caution
     and ensure you have proper backups before running this script.
 =============================================================
 */
 
--- Always switch to master to avoid dropping the current DB you're in
-USE master;
-GO
+-- Drop databases if they exist
+DROP DATABASE IF EXISTS bronze;
+DROP DATABASE IF EXISTS silver;
+DROP DATABASE IF EXISTS gold;
 
--- Drop the 'DataWarehouse' database if it exists
-IF EXISTS (SELECT 1 FROM sys.databases WHERE name = 'DataWarehouse')
-BEGIN
-    PRINT 'Database [DataWarehouse] exists. Dropping it...';
-    ALTER DATABASE [DataWarehouse] SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
-    DROP DATABASE [DataWarehouse];
-END
-ELSE
-BEGIN
-    PRINT 'Database [DataWarehouse] does not exist. Creating new one...';
-END
-GO
-
--- Create the new database
-CREATE DATABASE [DataWarehouse];
-GO
-
--- Switch context to the new database
-USE [DataWarehouse];
-GO
-
--- Create schemas
-CREATE SCHEMA [bronze];
-GO
-
-CREATE SCHEMA [silver];
-GO
-
-CREATE SCHEMA [gold];
-GO
+-- Create new databases
+CREATE DATABASE bronze;
+CREATE DATABASE silver;
+CREATE DATABASE gold;
